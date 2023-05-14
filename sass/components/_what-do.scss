@@ -1,0 +1,44 @@
+.what-do-header {
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.what-do-list {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* ulozenie mozliwie do srodka */
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    & img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .what-do-photo-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* do dolu i rozciagniete po szerokosci obrazu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* wysrodkowanie tekstu */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    /* text-align:center; */
+    height: 70px;
+    color: getColor('darkBg');
+    background-color: #2f303acc;
+    cursor: default;
+  }
+}

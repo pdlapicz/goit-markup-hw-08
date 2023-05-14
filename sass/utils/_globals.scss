@@ -1,0 +1,41 @@
+// domyślne początkowe wartości
+* {
+  outline: none;
+  /* usuniecie obramowania po focusie */
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+/* SEKCJA POZYCJONOWANIA STRONY */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1200px;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+ul {
+  /* usuniecie punktorow */
+  list-style: none;
+}
+body {
+  font-family: $fontFamily;
+  color: $defaultFontColor;
+  background-color: $defaultBgColor;
+}
+
+a {
+  font-family: $fontFamily;
+}

@@ -1,0 +1,17 @@
+@use './utils/vars' as *;
+// ZMIENNE NAJPIERW
+// USE - NOWSZY I BARDZIEJ ZALECANY SPOSOB, TO SAMO CO IMPORT, MUSI BYC 1
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap');
+@import './utils/globals';
+@import './components/header';
+@import './components/logo'; // tu same importy
+@import './components/footer';
+@import './components/filter_btns.scss';
+@import './components/gallery';
+@import './components/hero';
+@import './components/modal';
+@import './components/our-strengths';
+@import './components/what-do';
+@import './components/team';
+@import './components/clients';
+@import './components/form';

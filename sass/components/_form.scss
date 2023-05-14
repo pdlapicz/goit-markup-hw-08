@@ -1,0 +1,156 @@
+.form-order-service {
+  padding: 40px;
+
+  /* nagłówek */
+  &__header {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    padding-bottom: 12px;
+  }
+
+  .label-order {
+    position: relative;
+    /* position relative, aby ikony znajdowaly sie w danym labelu */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* ulozenie elementów tj span nad inputem */
+    &__span {
+      /* aby span byl nad inputem */
+      font-size: 12px;
+      color: getcolor('paragraph');
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+
+    &__input {
+      padding-left: 42px;
+      /* rozpoczęcie wpisywania miejsce dla ikony */
+      height: 40px;
+      border: 1px solid rgba(33, 33, 33, 0.2);
+      border-radius: 4px;
+      font-size: 12px;
+      /* +svg musial zostac dodany, aby zadzialala zmiana koloru dla ikony */
+      &:hover,
+      &:focus,
+      &:hover + .label-order__icon,
+      &:focus + .label-order__icon {
+        border-color: getColor('active');
+        fill: getColor('active');
+        transition-property: border-color, fill;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+
+    &__textarea {
+      border: 1px solid rgba(33, 33, 33, 0.2);
+      border-radius: 4px;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.01em;
+      /* 12 wysokosc 16 szerokosc */
+      padding: 12px 16px;
+      height: 7.5rem;
+      outline: none;
+      resize: none;
+      /* odstep dla oswiadczenia */
+      margin-bottom: 10px;
+      &::placeholder {
+        color: rgba(117, 117, 117, 0.5);
+      }
+      &:hover,
+      &:focus {
+        border-color: getColor('active');
+        transition-property: border-color;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      /* lewy dolny rog */
+      margin-bottom: 11px;
+      /* wymiar svg 18, 40/2 - 18/2 */
+      margin-left: 15px;
+    }
+  }
+
+  .label-check {
+    margin-top: 20px;
+    font-size: 14px;
+    /* wyswietlanie w jednej linii diva i spana, wysrodkowanie */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    &__span {
+      letter-spacing: 0.03em;
+      line-height: 24px;
+    }
+
+    &__link {
+      /* zmiana koloru dla linków */
+      color: getColor('active');
+    }
+
+    &__input {
+      /* ukrycie typowego checkboxa */
+      position: absolute;
+      opacity: 0;
+      cursor: none;
+      height: 0;
+      width: 0;
+    }
+
+    & .custom-checkbox {
+      /* wymiary ramki dla nowego checkboxa */
+      width: 16px;
+      height: 15px;
+      border: 1px solid getColor('default');
+      border-radius: 3px;
+    }
+    // .hidden-checkbox ~ .custom-checkbox > {
+    //   opacity: 1;
+    // }
+    .hidden-checkbox {
+      & ~ .custom-checkbox {
+        transition-property: border-color, background-color;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &:checked ~ .custom-checkbox {
+        background-color: getBgColor('active');
+        border-color: getColor('active');
+        transition-property: border-color, background-color;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+  }
+
+  .btn-order-send {
+    display: block;
+    margin: 30px auto 0 auto;
+    /* wyśrodkowanie przycisku */
+    padding: 10px 76px;
+    font-family: $fontFamily;
+    font-weight: 700;
+    color: #fff;
+    line-height: 30px;
+    letter-spacing: 0.06em;
+    /* button domyslnie ma czcionke domyslna dla przegladarki, wymaga zawsze nadania mimo ze jest w body */
+    cursor: pointer;
+    background: getBgColor('active');
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid getColor('active');
+  }
+}

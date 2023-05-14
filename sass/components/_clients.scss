@@ -1,0 +1,38 @@
+/*SEKCJA NASI KLIENCI*/
+
+.our-clients-header {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.our-clients {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 92px;
+    /* wymiary obramowania */
+    border: 1px solid getBgColor('border');
+    border-radius: 4px;
+    fill: getColor('icon');
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      border: 1px solid getColor('active');
+      border-radius: 4px;
+      fill: getColor('active');
+      transition-property: border, fill;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  // format
+  "liveSassCompile.settings.formats": [
+    {
+      // zminimalizowany css, expanded - skompilowany w calości
+      "format": "compressed",
+      // element main.min.css
+      "extensionName": ".min.css",
+      // folder sass - skompilowanie main, wycofanie sie 1 poziom wyzej i wejdzie do css i tam zapisze
+      "savePath": "~/../css"
+    }
+  ],
+  // pamietac o przecinku!!!
+  // generacja map - zobaczyć, z którego miejsca pochodzi dany styl
+  "liveSassCompile.settings.generateMap": true,
+  // prefixy - zmiana na tablice, chcemy miec zeby obsluzyc przegladarki ktore sa powyzej 1% i tak zeby obsluzyc ostatnie 2 wersje przegladarek
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"]
+}

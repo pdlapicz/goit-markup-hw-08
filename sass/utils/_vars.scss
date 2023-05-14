@@ -1,0 +1,43 @@
+// zmienne kolorów domyślnych
+$defaultFontColor: #212121;
+$defaultBgColor: #fff;
+// czcionki
+$fontFamily: 'Roboto', sans-serif;
+$fontFamilyLogo: 'Raleway', sans-serif;
+// kolory
+$fontColors: (
+  'default': #212121,
+  'active': #2196f3,
+  'lightBg': #000,
+  'darkBg': #fff,
+  'footer': #fff,
+  'icon': #afb1b8,
+  'footerWithAlpha': #ffffff99,
+  'contact': #757575,
+  'paragraph': #757575,
+);
+
+$bgColors: (
+  'active': #2196f3,
+  'section': #2f303a,
+  'inputFooter': #2f303a,
+  'footer': #2f303a,
+  'border': #eee,
+  //   ??????
+  'icon': #afb1b8,
+  'team': #f5f4fa,
+  'iconBg': #f5f4fa,
+  // tez dla logo i btn unactive,,
+  'iconFooterWithAlpha': #ffffff1a,
+  'btnUnactive': #f5f4fa,
+);
+
+// funkcje do zastosowania zamiast map-get($colors, 'background');
+
+@function getBgColor($key) {
+  @return map-get($bgColors, $key);
+}
+
+@function getColor($key) {
+  @return map-get($fontColors, $key);
+}

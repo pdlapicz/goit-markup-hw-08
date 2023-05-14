@@ -1,0 +1,34 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  /* ulozenie przyciskow */
+  padding-bottom: 50px;
+
+  &__btn {
+    /* domyslnie 16px font-size */
+    font-family: 'Roboto', sans-serif;
+    background-color: getBgColor('btnUnactive');
+    color: getColor('default');
+    border: 1px solid getBgColor('btnUnactive');
+    border-radius: 4px;
+    padding: 5px 21px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+    /* bo domyslnie ma color:#ffffff */
+    /* cien po najechaniu/focusie */
+    &:hover,
+    &:focus {
+      background-color: getBgColor('active');
+      color: getColor('darkBg');
+      border: 1px solid getBgColor('active');
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
+      transition-property: color, background-color, border;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}

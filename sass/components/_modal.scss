@@ -1,0 +1,76 @@
+/* OKNO MODALNE */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  /* wysrodkowanie do ekranu, bez transform lewy gorny rog bedzie na srodku strony */
+  width: 528px;
+  min-height: 581px;
+  background-color: $defaultBgColor;
+  /* stylowanie okna */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  opacity: 1;
+  /* musi byc aby byla animacja otwierania */
+  transition-duration: 600ms;
+  transition-property: transform opacity background-color;
+
+  &__btn-close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    background-color: $defaultBgColor;
+    border: 1px solid rgba(14, 7, 7, 0.1);
+    /* krawedzie "przycisku" */
+    width: 30px;
+    height: 30px;
+    /* tlo ikony, koło */
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: getBgColor('active');
+      fill: getColor('darkBg');
+      transition-property: background-color, fill;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}
+
+// MUSI BYC POZA MODAL - INACZEJ CALY CZAS JETS WIDOCZNY
+.is-hidden {
+  pointer-events: none;
+  /* nie klikalny (pomimo, że jest niewidoczny) */
+  visibility: hidden;
+  /* aby zadzialalo przejscie przy włączeniu i wylaczeniu */
+  & .modal {
+    position: absolute;
+    /* EFEKT ZNIKANIA poprzez scale, translate, obrot i scięcie, aby "wychodzilo" od srodka */
+    transform: translate(-50%, -50%) scale(0) rotate(45deg) skew(-45deg, -45deg);
+    background-color: getBgColor('section');
+    opacity: 0;
+    transition-property: transform opacity background-color;
+    transition-duration: 600ms;
+  }
+}
+
+.backdrop {
+  /* backdrop - przyciemnianie tyłu strony po otwarciu okna modalnego*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* wysrodkowanie */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}

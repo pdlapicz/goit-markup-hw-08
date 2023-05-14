@@ -1,0 +1,83 @@
+.header {
+  padding: 24px 0 25px;
+  border-bottom: 1px solid #ececec;
+
+  &__section {
+    /* glowny podzial */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.navigation {
+  display: flex;
+  gap: 46px;
+  margin-left: 93px;
+  margin-right: 345px;
+  /* ulozenie linkow nawigacyjnych */
+  /* padding-right: 345px; - zamienione przez justify-item */
+
+  &__link {
+    text-decoration: none;
+    color: getColor('default');
+
+    font-weight: 500;
+    font-size: 15px;
+
+    &:hover,
+    &:focus {
+      color: getColor('active');
+      transition-property: color;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &--is-active {
+      position: relative;
+      display: block;
+      color: getColor('active');
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 4px;
+        top: 45px;
+        left: 0;
+        right: 0;
+        background-color: getBgColor('active');
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+.contact-header {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  /* wysrodkowanie w pionie */
+  fill: getColor('contact');
+
+  &__item {
+    text-decoration: none;
+    color: getColor('contact');
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.1;
+    /* do wysrodkowania ikon w stosunku do tekstu linku */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:hover,
+    &:focus {
+      color: getColor('active');
+      fill: currentColor;
+      transition-property: color, fill;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      /* zmienne koloru dla ikon */
+    }
+  }
+}
