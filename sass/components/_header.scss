@@ -16,6 +16,8 @@
 }
 
 .navigation {
+  display: none;
+
   @include tablet {
     display: flex;
     gap: 60px;
@@ -64,57 +66,57 @@
     &__link {
       &--is-active {
         &::after {
-          top: 46px;
+          top: 45px;
+          // nie wiem, czasem odstaje, czasem nie, zostawiam tak
         }
       }
     }
   }
+}
+.contact-header {
+  display: none;
+  // display: flex;
 
-  .contact-header {
-    display: none;
-    // display: flex;
+  @include tablet {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    fill: getColor('contact');
 
-    @include tablet {
+    &__item {
+      text-decoration: none;
+      color: getColor('contact');
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      /* do wysrodkowania ikon w stosunku do tekstu linku */
       display: flex;
-      gap: 10px;
-      flex-direction: column;
-      fill: getColor('contact');
+      align-items: center;
+      gap: 8px;
+
+      &:hover,
+      &:focus {
+        color: getColor('active');
+        fill: currentColor;
+        transition-property: color, fill;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        /* zmienne koloru dla ikon */
+      }
+    }
+    @include desktop {
+      flex-direction: row;
+      gap: 30px;
+      align-items: center;
+      /* wysrodkowanie w pionie */
 
       &__item {
-        text-decoration: none;
-        color: getColor('contact');
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 14px;
+        font-size: 14px;
+        line-height: 16px;
         /* do wysrodkowania ikon w stosunku do tekstu linku */
-        display: flex;
-        align-items: center;
-        gap: 8px;
-
-        &:hover,
-        &:focus {
-          color: getColor('active');
-          fill: currentColor;
-          transition-property: color, fill;
-          transition-duration: 250ms;
-          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          /* zmienne koloru dla ikon */
-        }
-      }
-      @include desktop {
         flex-direction: row;
-        gap: 30px;
         align-items: center;
-        /* wysrodkowanie w pionie */
-
-        &__item {
-          font-size: 14px;
-          line-height: 16px;
-          /* do wysrodkowania ikon w stosunku do tekstu linku */
-          flex-direction: row;
-          align-items: center;
-          gap: 10px;
-        }
+        gap: 10px;
       }
     }
   }
