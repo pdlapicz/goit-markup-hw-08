@@ -1,20 +1,27 @@
 .header {
-  padding: 24px 0 25px;
+  padding: 16px 0;
   border-bottom: 1px solid #ececec;
 
   &__section {
     /* glowny podzial */
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+  }
+  @include tablet {
+    padding: 20px 0;
+  }
+  @include desktop {
+    padding: 24px 0 25px;
   }
 }
 
 .navigation {
-  display: flex;
-  gap: 46px;
-  margin-left: 93px;
-  margin-right: 345px;
+  display: none;
+  // brak wyswietlania domyslnie navi dla telefonu
+  // display: flex;
+  gap: 60px;
+  margin-left: 83px;
+  margin-right: 101px;
   /* ulozenie linkow nawigacyjnych */
   /* padding-right: 345px; - zamienione przez justify-item */
 
@@ -23,7 +30,7 @@
     color: getColor('default');
 
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
 
     &:hover,
     &:focus {
@@ -42,7 +49,7 @@
         content: '';
         position: absolute;
         height: 4px;
-        top: 45px;
+        top: 50px;
         left: 0;
         right: 0;
         background-color: getBgColor('active');
@@ -50,25 +57,34 @@
       }
     }
   }
+  @include tablet {
+    display: flex;
+  }
+  @include desktop {
+    display: flex;
+    gap: 46px;
+    margin-left: 93px;
+    margin-right: 345px;
+  }
 }
 
 .contact-header {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  /* wysrodkowanie w pionie */
+  display: none;
+  // display: flex;
+  gap: 10px;
+  flex-direction: column;
   fill: getColor('contact');
 
   &__item {
     text-decoration: none;
     color: getColor('contact');
     font-weight: 500;
-    font-size: 14px;
-    line-height: 1.1;
+    font-size: 12px;
+    line-height: 14px;
     /* do wysrodkowania ikon w stosunku do tekstu linku */
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 
     &:hover,
     &:focus {
@@ -78,6 +94,25 @@
       transition-duration: 250ms;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       /* zmienne koloru dla ikon */
+    }
+  }
+  @include tablet {
+    display: flex;
+  }
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    /* wysrodkowanie w pionie */
+
+    &__item {
+      font-size: 14px;
+      line-height: 16px;
+      /* do wysrodkowania ikon w stosunku do tekstu linku */
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
     }
   }
 }

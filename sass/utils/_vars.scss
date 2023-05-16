@@ -41,3 +41,16 @@ $bgColors: (
 @function getColor($key) {
   @return map-get($fontColors, $key);
 }
+
+// mixiny dla wyswietlaczy - kolejno tablet i komputer, standardowo pod telefon
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

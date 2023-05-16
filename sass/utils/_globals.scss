@@ -15,15 +15,26 @@ ul {
 }
 /* SEKCJA POZYCJONOWANIA STRONY */
 .container {
+  max-width: 480px;
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 1200px;
+
+  @include tablet {
+    max-width: 768px;
+  }
+  @include desktop {
+    max-width: 1200px;
+  }
 }
 
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  @include tablet {
+  }
+  @include desktop {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 ul {

@@ -1,11 +1,18 @@
 .logo {
   font-family: $fontFamilyLogo;
-  font-size: 26px;
+  font-size: 24px;
   text-decoration: none;
   /* usuniecie podkreslenia */
   font-weight: 700;
   color: getColor('active');
-  line-height: 30px;
+  line-height: 28px;
+  @include tablet {
+    max-width: 768px;
+  }
+  @include desktop {
+    font-size: 26px;
+    line-height: 31px;
+  }
 
   &--black {
     color: black;
