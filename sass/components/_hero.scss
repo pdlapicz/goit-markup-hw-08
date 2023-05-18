@@ -1,27 +1,25 @@
 /* SEKCJA HERO */
 .hero {
   background-color: getBgColor('section');
-
   .hero-image {
-    width: 100%;
-    margin: 0 auto; /*wyśrodkowanie*/
-    max-width: 1600px; /*maksymalna szerokosc obrazu po oddaleniu*/
+    height: 400px;
     background-image: linear-gradient(to bottom, rgba(47, 48, 58, 0.4), rgba(10, 10, 10, 0.73)),
       url(../images/background-hero.jpg);
     background-repeat: no-repeat;
-    background-position: center; /*centorwanie obrazu przy przybliżaniu*/
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto; /*wyśrodkowanie*/
+    padding:118px 0;
     /* dla obrazu */
     /*gradient*/
-    padding: 200px 0;
   }
 
   &__side-title {
+    max-width: 365px;
     text-align: center;
-    max-width: 696px;
-    /* szrokosc tekstu - max, czyli moze byc mniejszy */
     font-weight: 900;
-    font-size: 44px;
-    line-height: 60px;
+    font-size: 26px;
+    line-height: 42px;
     letter-spacing: 0.06em;
     color: getColor('darkBg');
     text-transform: uppercase;
@@ -46,5 +44,54 @@
     color: getColor('darkBg');
     /* button ma domyslne color: #000000 */
     background-color: getBgColor('active');
+  }
+  @include tablet {
+  }
+  @include desktop {
+    .hero-image {
+      width: 100%;
+      margin: 0 auto; /*wyśrodkowanie*/
+      max-width: 1600px; /*maksymalna szerokosc obrazu po oddaleniu*/
+      background-image: linear-gradient(to bottom, rgba(47, 48, 58, 0.4), rgba(10, 10, 10, 0.73)),
+        url(../images/background-hero.jpg);
+      background-repeat: no-repeat;
+      background-position: center; /*centorwanie obrazu przy przybliżaniu*/
+      /* dla obrazu */
+      /*gradient*/
+      padding: 200px 0;
+    }
+
+    &__side-title {
+      text-align: center;
+      max-width: 696px;
+      /* szrokosc tekstu - max, czyli moze byc mniejszy */
+      font-weight: 900;
+      font-size: 44px;
+      line-height: 60px;
+      letter-spacing: 0.06em;
+      color: getColor('darkBg');
+      text-transform: uppercase;
+      padding-bottom: 30px;
+      margin: 0 auto;
+      /* wysrodkowanie tekstu */
+    }
+
+    &__btn-order {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 9px 40px;
+      letter-spacing: 0.06em;
+      line-height: 30px;
+      border-radius: 4px;
+      border: 1px solid getBgColor('active');
+      font-family: $fontFamily;
+      /* button domyslnie ma czcionke domyslna dla przegladarki, wymaga zawsze nadania mimo ze jest w body */
+      cursor: pointer;
+      font-weight: 700;
+      color: getColor('darkBg');
+      /* button ma domyslne color: #000000 */
+      background-color: getBgColor('active');
+    }
   }
 }
