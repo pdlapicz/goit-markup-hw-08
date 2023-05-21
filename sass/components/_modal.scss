@@ -1,5 +1,11 @@
 /* OKNO MODALNE */
 .modal {
+      @include tablet {
+
+  }
+  @include desktop {
+
+  }
   position: absolute;
   top: 50%;
   left: 50%;

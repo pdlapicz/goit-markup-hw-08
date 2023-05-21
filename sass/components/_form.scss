@@ -1,4 +1,10 @@
 .form-order-service {
+      @include tablet {
+
+  }
+  @include desktop {
+
+  }
   padding: 40px;
 
   /* nagłówek */

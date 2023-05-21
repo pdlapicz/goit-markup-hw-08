@@ -1,8 +1,45 @@
 /* SEKCJA TEKSTOWA */
 .our-strengths {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 30px;
+
+&__logo {
+  max-width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* wysrodkowanie loga */
+  height: 120px;
+  background-color: getBgColor('iconBg');
+  border-radius: 4px;
+}
+
+&__title {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 700;
+  line-height: 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  /* same wielkie litery */
+  padding-bottom: 10px;
+}
+
+&__description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: getColor('paragraph');
+}
+
+@include tablet {
+  padding-bottom: 45px;
+  /* dla oddzielenia sekcji wewnetrznych, nie mozna osobno dac sekcji bo najda 2 paddingi */
+}
+@include desktop {
   padding-bottom: 94px;
   /* dla oddzielenia sekcji wewnetrznych, nie mozna osobno dac sekcji bo najda 2 paddingi */
-
   .our-strengths-list {
     display: flex;
     /* justify-content: center; */
@@ -28,10 +65,11 @@
     /* same wielkie litery */
     padding-bottom: 10px;
   }
-
+s
   &__description {
     font-size: 14px;
     line-height: 1.7;
     color: getColor('paragraph');
   }
+}
 }

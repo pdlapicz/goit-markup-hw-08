@@ -1,6 +1,12 @@
 /* galeria */
 
 .gallery {
+      @include tablet {
+
+  }
+  @include desktop {
+
+  }
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -55,6 +61,12 @@
 }
 /* pole pod zdjeciem w karcie */
 .gallery-description {
+      @include tablet {
+
+  }
+  @include desktop {
+
+  }
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   &__title {

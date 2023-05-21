@@ -1,4 +1,10 @@
 .filter {
+      @include tablet {
+
+  }
+  @include desktop {
+
+  }
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
