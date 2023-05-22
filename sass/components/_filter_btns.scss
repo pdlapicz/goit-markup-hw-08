@@ -1,16 +1,10 @@
 .filter {
-      @include tablet {
-
-  }
-  @include desktop {
-
-  }
   display: flex;
-  justify-content: center;
+
   flex-wrap: wrap;
   gap: 8px;
   /* ulozenie przyciskow */
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 
   &__btn {
     /* domyslnie 16px font-size */
@@ -19,7 +13,7 @@
     color: getColor('default');
     border: 1px solid getBgColor('btnUnactive');
     border-radius: 4px;
-    padding: 5px 21px;
+    padding: 6px 30px;
     font-weight: 500;
     line-height: 26px;
     letter-spacing: 0.03em;
@@ -36,5 +30,14 @@
       transition-duration: 250ms;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
+  }
+  @include tablet {
+    justify-content: center;
+    gap: 6px;
+    padding-bottom: 30px;
+  }
+  @include desktop {
+    gap: 8px;
+    padding-bottom: 50px;
   }
 }

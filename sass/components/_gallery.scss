@@ -1,19 +1,14 @@
 /* galeria */
 
 .gallery {
-      @include tablet {
-
-  }
-  @include desktop {
-
-  }
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
   /* ulozenie kart */
-  flex-basis: calc((100% - 20px) / 3);
   &__item {
     cursor: pointer;
+    width: 100%;
     /* karta z galerii */
     &:hover,
     &:focus {
@@ -29,6 +24,7 @@
     }
     & img {
       display: block;
+      width: 100%;
       /* pozbycie sie odstepu miedzy obrazem a tekstem ponizej */
     }
   }
@@ -47,7 +43,7 @@
     left: 0;
     height: 100%;
     /* granice obszaru - obejmuje caly relatywny obiekt - tu-img */
-    padding: 49px 45px 49px 24px;
+    padding: 77px 24px;
     /* odstepy */
     background-color: #2196f3e5;
     color: getColor('darkBg');
@@ -58,15 +54,29 @@
     transition: transform 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+  @include tablet {
+    &__item {
+      width: calc((100% - 30px) / 2);
+    }
+
+    & img {
+      display: block;
+      width: auto;
+      /* pozbycie sie odstepu miedzy obrazem a tekstem ponizej */
+    }
+    &__label {
+      padding: 49px 45px 49px 24px;
+    }
+  }
+  @include desktop {
+    justify-content: left;
+    &__item {
+      width: fit-content;
+    }
+  }
 }
 /* pole pod zdjeciem w karcie */
 .gallery-description {
-      @include tablet {
-
-  }
-  @include desktop {
-
-  }
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   &__title {
