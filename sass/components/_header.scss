@@ -6,8 +6,27 @@
     /* glowny podzial */
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+  .navigation-mobile {
+    fill: #000;
+    padding-right: -5px;
+    &__button {
+      border: none;
+      background-color: #fff;
+      &:hover,
+      &:focus {
+        fill: getColor('active');
+      }
+    }
   }
   @include tablet {
+    &__section {
+      justify-content: left;
+    }
+    .navigation-mobile {
+      display: none;
+    }
     padding: 20px 0 19px;
   }
   @include desktop {
