@@ -31,7 +31,7 @@
     border-radius: 4px;
     fill: getColor('icon');
     cursor: pointer;
-
+    flex-basis: calc((100% - 30px) / 2);
     &:hover,
     &:focus {
       border: 1px solid getColor('active');
@@ -43,9 +43,13 @@
     }
   }
   @include tablet {
+    &__item {
+      flex-basis: calc((100% - 30px) / 3);
+    }
   }
   @include desktop {
     &__item {
+      flex-basis: auto;
       width: 170px;
     }
   }

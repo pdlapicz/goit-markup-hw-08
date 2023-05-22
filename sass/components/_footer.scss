@@ -43,6 +43,15 @@
   }
 
   @include tablet {
+    .footer-section {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .footer-address {
+      margin-left:61px;
+margin-right:144px;
+margin-bottom:1px;
+    }
   }
   @include desktop {
     text-align: left;
@@ -53,11 +62,12 @@
 
     .footer-section {
       /* rozlozenie sekcji z logiem i adresem oraz tekstem i ikonami */
-      display: flex;
       gap: 70px;
-      flex-wrap: wrap;
     }
-
+    .footer-address {
+      width: fit-content;
+      margin:0;
+    }
     .footer-contact {
       /* ulozenie czesci z danymi kontaktowymi */
       padding-top: 21px;
@@ -102,6 +112,7 @@
     }
   }
   @include tablet {
+
   }
   @include desktop {
     width: 206px;
@@ -111,6 +122,7 @@
 /* 3 sekcja stopki - zapisz się do newslettera */
 .footer-subscribe-newsletter {
   @include tablet {
+    margin: 0 auto;
   }
   @include desktop {
     padding-left: 8px;
@@ -135,7 +147,7 @@
 
   &__btn {
     display: block;
-    margin:20px auto 0;
+    margin: 20px auto 0;
     padding: 9px 3px 9px 41px;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -160,6 +172,10 @@
     }
   }
   @include tablet {
+    &__input {
+      /* szerokosc pola do wpisywania */
+      width: 450px;
+    }
   }
   @include desktop {
     /* podzial sekcji - 2 czesci */
@@ -169,42 +185,10 @@
     &__input {
       /* szerokosc pola do wpisywania */
       width: 358px;
-      padding: 14px 16px;
-      /* odstepy wewnatrz pola */
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 4px;
-      background-color: getBgColor('inputFooter');
-      caret-color: #fff;
-      /* kolor kursora w inpucie */
-      color: #fff;
-      /* kolor czcionki - domyslnie czarny */
-      line-height: 20px;
     }
 
     &__btn {
-      margin-top:0;
-      padding: 9px 3px 9px 41px;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 700;
-      color: #fff;
-      line-height: 30px;
-      letter-spacing: 0.06em;
-      /* button domyslnie ma czcionke domyslna dla przegladarki, wymaga zawsze nadania mimo ze jest w body */
-      cursor: pointer;
-      background: getBgColor('active');
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-      border-radius: 4px;
-      border-radius: 4px;
-      border: 1px solid getBgColor('active');
-      fill: #fff;
-      /* wysrodkowanie tekstu z ikona */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      & svg {
-        margin: 0px 24px;
-      }
+      margin-top: 0;
     }
   }
 }
