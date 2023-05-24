@@ -75,16 +75,17 @@
 }
 
 .mobile-menu {
-  padding: 48px 40px;
-  margin: 0;
+  height: 100vh;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .mobile-navigation {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding-bottom: 302px;
 
   &__link {
     font-weight: 500;
@@ -108,7 +109,6 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding-bottom: 64px;
   &__link {
     text-decoration: none;
     font-weight: 500;
