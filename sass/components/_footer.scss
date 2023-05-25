@@ -48,9 +48,9 @@
       flex-wrap: wrap;
     }
     .footer-address {
-      margin-left:61px;
-margin-right:144px;
-margin-bottom:1px;
+      margin-left: 61px;
+      margin-right: 144px;
+      margin-bottom: 1px;
     }
   }
   @include desktop {
@@ -66,7 +66,7 @@ margin-bottom:1px;
     }
     .footer-address {
       width: fit-content;
-      margin:0;
+      margin: 0;
     }
     .footer-contact {
       /* ulozenie czesci z danymi kontaktowymi */
@@ -74,6 +74,7 @@ margin-bottom:1px;
       line-height: 1.5;
       width: fit-content;
       gap: 9px;
+      padding-bottom: 0;
     }
   }
 }
@@ -112,10 +113,10 @@ margin-bottom:1px;
     }
   }
   @include tablet {
-
   }
   @include desktop {
     width: 206px;
+    padding-bottom: 0;
   }
 }
 

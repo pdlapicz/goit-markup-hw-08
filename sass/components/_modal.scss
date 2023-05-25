@@ -5,7 +5,8 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1) rotate(0);
   /* wysrodkowanie do ekranu, bez transform lewy gorny rog bedzie na srodku strony */
-  min-height: 581px;
+  max-height: 609px;
+  width: 100%;
   max-width: 450px;
   background-color: $defaultBgColor;
   /* stylowanie okna */
@@ -27,8 +28,8 @@
     background-color: $defaultBgColor;
     border: 1px solid rgba(14, 7, 7, 0.1);
     /* krawedzie "przycisku" */
-    width: 30px;
-    height: 30px;
+    max-width: 30px;
+    max-height: 30px;
     /* tlo ikony, koło */
     border-radius: 50%;
     cursor: pointer;
